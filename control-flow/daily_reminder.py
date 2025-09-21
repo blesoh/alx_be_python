@@ -1,24 +1,27 @@
 # Personal Daily Reminder
 task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ")
-timebound = input("Is it time-bound? (yes/no): ")
+time_bound = input("Is it time-bound? (yes/no): ")
+
+# Match case for priority
 match priority:
     case "high":
-        reminder = (f" {task} is a high priority task and should be done first. ")
-    
+        reminder = f"Reminder: '{task}' is a high priority task."
     case "medium":
-        
-        reminder = (f" {task} is a medium priority task and should be done after high priority tasks. ")
+        reminder = f"Reminder: '{task}' is a medium priority task."
     case "low":
-     
-        reminder = (f" {task} is a low priority task and can be done later. ")  
+        reminder = f"Note: '{task}' is a low priority task."
     case _:
-        print("Invalid priority level. Please enter high, medium, or low.")
+        reminder = f"'{task}' has an unknown priority."
 
-if timebound.lower() == "yes":
-    reminder = (f" {task} Since it is time-bound, complete it as soon as possible!")
+# If statement to modify reminder
+if time_bound == "yes":
+    reminder = reminder + " It requires immediate attention today!"
 else:
-    reminder = (f" {task} is a low priority task. Consider completing it when you have free time. ")
-    print(reminder)
+    if priority == "low":
+        reminder = reminder + " Consider completing it when you have free time."
+    else:
+        reminder = reminder + " This task is not time-bound, you can schedule it more flexibly."
 
-# This script helps users manage their daily tasks by prioritizing them based on urgency and importance.
+# Final output
+print(reminder)
