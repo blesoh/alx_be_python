@@ -1,7 +1,7 @@
 # Personal Daily Reminder
 task = input("Enter your task: ")
-timebound = input("Is it time-bound? (yes/no): ")
 priority = input("Priority (high/medium/low): ")
+timebound = input("Is it time-bound? (yes/no): ")
 match priority:
     case "high":
         if task is timebound.lower() == "yes":
