@@ -7,8 +7,8 @@
 
 def safe_divide(numerator, denominator):
     try:
-        num = float(str(numerator).strip())
-        den = float(str(denominator).strip())
+        num = float(numerator)
+        den = float(denominator)
     except ValueError:
         return "Error: Please enter numeric values only."
 
